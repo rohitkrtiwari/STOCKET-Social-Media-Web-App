@@ -1,0 +1,58 @@
+.win-profile{
+    border-right: 1px solid antiquewhite;
+    width: 65%;
+}
+.header{
+    height: 240px;
+}
+.win-profile .header .background{
+    width: 100%;
+}
+.win-profile .header .profile{
+    position: relative;
+    border-radius: 77px;
+    width: 142px;
+    top: -95px;
+    left: 20px;
+}
+.win-profile .profile-title {
+    padding: 5px 30px;
+    width: 65%;
+}
+.win-profile .profile-title .profile-name{
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+}
+.win-profile .profile-title .profile-id{
+    /* font-style: italic; */
+    color: #6e6e6e;
+    font-size: 14px;
+    margin-top: 1px;
+}
+.win-profile .profile-title .profile-bio{
+    font-size: 17px;
+    margin-top: 17px;
+}
+.win-profile .edit-profile{
+    position: relative;
+    right: 25px;
+    top: -32px;
+}
+
+.win-profile .edit-profile a{
+    text-decoration: none;
+    color: cornflowerblue;
+    font-weight: 300;
+    font-size: larger;
+    border-radius: 30px;
+    border: 1px solid cornflowerblue;
+    padding: 3px 17px;
+    cursor: pointer;
+    transition: .2s;
+}
+.win-profile .edit-profile a:hover{
+    background-color: cornflowerblue;
+    color: white;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'head.html' %}
+    <link rel="stylesheet" href="/static/css/profile.css">
+</head>
+
+<body>
+    <div>
+        
+        {% include 'nav.html' %}
+
+
+        <div class="win-r" >
+            <div class="win-profile">
+                <div class="header">
+                    <img class="background popup-img" src="{{res[0][3]}}">
+                    <img class="profile popup-img" src="{{res[0][2]}}">
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <div class="profile-title">
+                        <div class="profile-name"><span>{{res[0][0]}}</span></div>
+                        <div class="profile-id"><span>@{{res[0][1]}}</span></div>
+                        <div class="profile-bio"><span>{{res[0][4]}}</span></div>
+                    </div>
+                    {% if res[0][1] == user[0][1] %}
+                    <div class="edit-profile">
+                        <a href="@{{res[0][1]}}/edit-profile">edit profile</a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="post-div">
+                <br>
+                <br>
+                <hr height="1px" color="antiquewhite" >
+                {%for i in posts%}
+                <div class="post">
+                    <div class="post-title">
+                        <div class="post-avt">
+                            <a href="/@{{i[1]}}"><img src="{{i[6]}}" alt=""></a>
+                        </div>
+                        <div class="post-user">
+                            <div class="post-username">
+                                <span class="post-username-name"><a href="/@{{i[1]}}">{{i[0]}}</a></span>
+                                <span class="post-username-id"><a href="/@{{i[1]}}">@{{i[1]}}</a></span>
+                            </div>
+                            <div class="post-date">
+                                <span >{{i[5]}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-cont">
+                        {% if i[4] != None  %}
+                        <div class="post-img">
+                            <img src="{{i[4]}}" class="popup-img" alt="">
+                        </div>
+                        {%endif%}
+                        <div class="post-text">
+                            <span>{{i[2]}}</span>
+                        </div>
+                    </div>
+                </div>
+                {%endfor%}
+            </div>
+
+        </div>
+
+        {% include 'right-window.html' %}
+    
+    </div>
+
+    <script src="/static/JS/popup-img.js"></script>
+
+</body>
+</html>

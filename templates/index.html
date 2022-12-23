@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'head.html' %}
+</head>
+
+<body>
+    <div>
+
+        {% include 'nav.html' %}
+
+        <div class="win-r" >
+            
+            <div class="post-div">
+                {%for i in posts%}
+                <div class="post">
+                    <div class="post-title">
+                        <div class="post-avt">
+                            <a href="/@{{i[1]}}"><img src="{{i[6]}}" alt=""></a>
+                        </div>
+                        <div class="post-user">
+                            <div class="post-username">
+                                <span class="post-username-name"><a href="/@{{i[1]}}">{{i[0]}}</a></span>
+                                <span class="post-username-id"><a href="/@{{i[1]}}">@{{i[1]}}</a></span>
+                            </div>
+                            <div class="post-date">
+                                <span >{{i[5]}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-cont">
+                        {% if i[4] != None  %}
+                        <div class="post-img">
+                            <img src="{{path}}{{i[4]}}" class="popup-img" alt="">
+                        </div>
+                        {%endif%}
+                        <div class="post-text">
+                            <span>{{i[2]}}</span>
+                        </div>
+                    </div>
+                </div>
+                {%endfor%}
+            </div>
+        </div>
+    
+        {% include 'right-window.html' %}
+
+    </div>
+
+    <script src="/static/JS/popup-img.js"></script>
+
+</body>
+</html>

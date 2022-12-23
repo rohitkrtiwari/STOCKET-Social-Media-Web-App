@@ -1,0 +1,28 @@
+<div class="win-l">
+    <a href="/"><img src="/static/images/STOCKET.png" class="logo" alt="logo"></a>
+    <div class="nav-menu"> 
+        <div><a href="/" style="font-weight: 600;"><img src="/static/images/icon/home.png"> <span>Home</span></a></div>
+        <div><a href="/#"><img src="/static/images/icon/messages.png"> <span>Messages</span></a></div>
+        <div><a href="/#"><img src="/static/images/icon/notifications.png"> <span>Notifications</span></a></div>
+        <div><a href="/logout"><img src="/static/images/icon/logout.png"> <span>Logout</span></a></div>
+    </div>
+    <div class="nav-bottom">
+        <div class="nav-bottom-new-post"><a href="/compose"><button class="btn-newpost">New Post</button></a></div>
+        <a href="/@{{user[0][1]}}" class="profile-link-a">
+            <div class="profile-link">
+                <div class="profile-avt"><img src="{{path}}{{user[0][2]}}"></div>
+                <div class="profile-user">
+                    <div class="profile-user-name">{{user[0][0]}}</div>
+                    <div class="profile-user-id">@{{user[0][1]}}</div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="popup-image">
+    <div id="popup-span">
+        <span>&times;</span>
+    </div>
+    <img src="" alt="">
+</div>

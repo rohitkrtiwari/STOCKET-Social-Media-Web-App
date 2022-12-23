@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'head.html' %}        
+</head>
+
+<body style="overflow: hidden;">
+    <div>
+
+        {% include 'nav.html' %}
+
+
+        <div class="win-r" >
+            <div class="post-div">
+                <div class="post">
+                    <div style="padding: 11px 0 4px 24px;border-bottom: 1px solid antiquewhite;">
+                        <span style="font-size: 25px;">Create a Post</span>
+                    </div>
+                    <div class="post-title">
+                        <div class="post-avt">
+                            <img src="{{path}}{{user[0][2]}}" alt="">
+                        </div>
+                        <div class="post-user">
+                            <div class="post-username">
+                                <span class="post-username-name">{{user[0][0]}}</span>
+                                <span class="post-username-id">@{{user[0][1]}}</span>
+                            </div>
+                            <div class="post-date">
+                                <span >{{date}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <form action="/new_post"enctype="multipart/form-data" method="post">
+                        <div class="post-cont">
+                            <div class="post-text">
+                                <textarea name="post_data" id="post_data" placeholder="What do you want to talk about ?" ></textarea>
+                            </div>
+                        </div>
+                        <div class="post-controls">
+                            <div class="post-controls-l">
+                                <!-- Add Image Option disabled temporally -->
+                                <div class="post-image-upload">
+                                    <label for="file-input"><img src="{{path}}/static/images/img-upload-ico.png"></label>    
+                                    <p class="file-name"></p>
+                                    <input id="file-input" name="image" type="file" />
+                                </div>
+                            </div>
+                            <div class="post-controls-r">
+                                <button id="post_submit" type="submit">Post</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+    
+    <script src="/static/JS/enter-to-post.js"></script>
+    <script src="/static/JS/popup-img.js"></script>
+
+</body>
+</html>

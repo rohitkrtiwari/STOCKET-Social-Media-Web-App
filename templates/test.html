@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+   <style>
+      img {
+    transition:transform 0.25s ease;
+}
+
+img:hover {
+    -webkit-transform:scale(1.5); /* or some other value */
+    transform:scale(1.5);
+}
+   </style>
+	<body>
+		<div class="container"
+			style="text-align: center;
+					margin-top: 5em;">
+			<!-- Image to be enlarged and
+				onclick() function call-->
+			<img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/geeksforgeeks-6.png"
+				onclick="enlargeImg()"
+				id="img1" />
+			<br />
+			<br />
+			<br />
+			<!-- Button to reset the Image size -->
+			<button onclick="resetImg()">Reset
+		</button>
+		</div>
+
+		<!-- script to set display property -->
+		<script>
+			img = document.getElementById("img1");
+			// Function to set image dimensions
+			function enlargeImg() {
+				img.style.width = "60%";
+				img.style.height = "auto";
+				img.style.transition = "width 0.5s ease";
+			}
+			// Function to reset image dimensions
+			function resetImg() {
+				img.style.width = "40%";
+				img.style.height = "auto";
+				img.style.transition = "width 0.5s ease";
+			}
+		</script>
+	</body>
+</html>

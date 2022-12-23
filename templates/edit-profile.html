@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'head.html' %}
+    <link rel="stylesheet" href="/static/css/profile.css">
+</head>
+
+<body>
+    <div>
+        
+        {% include 'nav.html' %}
+
+        <div class="win-r" >
+            <div class="win-profile">
+                <div class="header">
+                    <img class="background popup-img" src="{{path}}{{user[0][3]}}">
+                    <img class="profile popup-img" src="{{path}}{{user[0][2]}}">
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <div class="profile-title">
+                        <div class="profile-name"><span>{{user[0][0]}}</span></div>
+                        <div class="profile-id"><span>@{{user[0][1]}}</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="width: 65%; padding: 50px 0;">
+                <div class="profile-update-form">
+                    <form action="/update-profile" method="post" enctype="multipart/form-data">
+                    <div class="form-heading">
+                        <div>
+                            <span>Edit profile</span>
+                        </div>
+                        <div>
+                            <button type="submit">Save</button>
+                        </div>
+                    </div>
+                        <div class="form-input">
+                            <label for="">Name</label>
+                            <input type="text" value="{{user[0][0]}}" name="name" id="">
+                        </div>
+                        <div class="form-input">
+                            <label for="">Bio</label>
+                            <textarea name="bio" id="">{{user[0][4]}}</textarea>
+                        </div>
+                        <div class="form-input">
+                            <label for="">email</label>
+                            <input type="text" value="{{user[0][5]}}" name="email" id="">
+                        </div>
+                        <div class="form-input">
+                            <label for="">Phone Number</label>
+                            <input type="text" value="{{user[0][6]}}" name="pno" id="">
+                        </div>
+                    </div>
+                    </form>
+            </div>
+
+
+        </div>
+    
+    </div>
+
+    <script src="/static/JS/popup-img.js"></script>
+
+</body>
+</html>
